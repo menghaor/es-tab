@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#my-tab {
+				width: 500px;
+				height: 500px;
+				border: 1px solid #000;
+			}
+
+			.tab-wrapper {
+				overflow: hidden;
+				border-bottom: 1px solid #333;
+			}
+
+			.tab-wrapper .tab-item {
+				float: left;
+				widith: 33.333%;
+				height: 50px;
+				line-height: 50px;
+				padding: 0 20px;
+				box-sizing: border-box;
+				cursor: pointer;
+			}
+
+			.tab-wrapper .tab-item.current {
+				background: #000;
+				color: #fff;
+			}
+
+			.content-wrapper {
+				position: relative;
+				left: 0;
+				height: 450px;
+			}
+
+			.content-wrapper .content-item {
+				display: none;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				line-height: 450px;
+				text-align: center;
+			}
+
+			.content-wrapper .content-item.current {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="my-tab"></div>
+	</body>
+
+	<script src="./js/tpl.js"></script>
+	<script src="./js/my-tab.js"></script>
+	<script>
+		var tab1 = new MyTab('#my-tab', {
+			"tab": [{
+				"tabName": "tab1",
+				"content": "内容111"
+			}, {
+				"tabName": "tab2",
+				"content": "内容222"
+			}, {
+				"tabName": "tab3",
+				"content": "内容333"
+			}],
+			"active": 0
+		})
+	</script>
+</html>
